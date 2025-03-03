@@ -8,7 +8,7 @@ function App() {
     <Router>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <Link className="navbar-brand" to="/">我的網站</Link>
+          <Link className="navbar-brand" to="/2025-0304/">我的網站</Link>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
