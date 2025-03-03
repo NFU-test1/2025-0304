@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+
 import supabase from "./supabaseClient";
 
 function Register() {
@@ -45,7 +46,7 @@ function Register() {
               <button type="submit" className="btn btn-primary w-100">註冊</button>
             </form>
             <p className="text-center mt-3">
-              已有帳號？ <a href="/login">點此登入</a>
+              已有帳號？ <Link to="/login">點此登入</Link>
             </p>
           </div>
         </div>
