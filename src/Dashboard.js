@@ -6,7 +6,6 @@ function Dashboard() {
   const [user, setUser] = useState(null);
   const [name, setName] = useState("");
   const [account, setAccount] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -20,13 +19,12 @@ function Dashboard() {
     setUser(userData);
     setName(userData.name);
     setAccount(userData.account);
-    setEmail(userData.email);
     setPassword(userData.password); 
   }, [navigate]);
 
   async function handleUpdate(e) {
     e.preventDefault();
-    if (!name || !account || !email || !password) {
+    if (!name || !account || !password) {
       alert("所有欄位都必須填寫！");
       return;
     }
@@ -38,7 +36,6 @@ function Dashboard() {
         id_param: user.id,
         name_param: name,
         account_param: account,
-        email_param: email,
         password_param: password,
       });
   
@@ -48,12 +45,11 @@ function Dashboard() {
       alert("更新失敗：" + error.message);
     } else {
       alert("資料更新成功！");
-      // 這裡 **不清除密碼**
       localStorage.setItem(
         "user",
-        JSON.stringify({ ...user, name, account, email, password })
+        JSON.stringify({ ...user, name, account, password })
       );
-      setUser({ ...user, name, account, email, password }); // 更新狀態
+      setUser({ ...user, name, account, password }); // 更新狀態
     }
   }
   
@@ -101,10 +97,6 @@ function Dashboard() {
                   <div className="mb-3">
                     <label className="form-label">帳號</label>
                     <input type="text" className="form-control" value={account} onChange={(e) => setAccount(e.target.value)} required />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Email</label>
-                    <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} required />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">密碼</label>

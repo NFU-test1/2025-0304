@@ -4,7 +4,6 @@ import supabase from "./supabaseClient";
 
 function Register() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [account, setAccount] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ function Register() {
     e.preventDefault();
 
     const { data, error } = await supabase.from("users").insert([
-      { name, email, account, password }
+      { name, account, password }
     ]);
 
     if (error) {
@@ -34,10 +33,6 @@ function Register() {
               <div className="mb-3">
                 <label className="form-label">名稱</label>
                 <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} required />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Email</label>
-                <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className="mb-3">
                 <label className="form-label">帳號</label>
