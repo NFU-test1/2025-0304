@@ -24,7 +24,7 @@ function App() {
 
       <div className="container mt-4">
         <Routes>
-          <Route path="/" element={<h1 className="text-center">歡迎來到我的網站</h1>} />
+          <Route path="/2025-0304/" element={<h1 className="text-center">歡迎來到我的網站</h1>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
