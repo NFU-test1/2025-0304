@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
+import Tlogin from "./Tlogin";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
               <li className="nav-item">
                 <Link className="nav-link" to="/login">登入</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/tlogin">靜態登入</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -27,6 +31,7 @@ function App() {
           <Route path="/2025-0304/" element={<h1 className="text-center">歡迎來到我的網站</h1>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/tlogin" element={<Tlogin />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
